@@ -1,0 +1,55 @@
+conf t
+  hostname S1
+  enable password class
+  line console 0
+    password cisco
+    login
+    exit
+  line vty 0 15
+    login
+    password cisco
+    exit
+  service password-encryption
+  banner motd «This is a secure system. Authorized Access Only!»
+  exit
+clock set 19:03:00 13 feb 2022
+copy running-config startup-config
+conf t
+  vlan 3
+    name Management
+    exit
+  vlan 4
+    name Operations
+    exit
+  vlan 7
+    name ParkingLot
+    exit
+  vlan 8
+    name Native
+    exit
+  interface vlan 3
+    ip address 192.168.3.11 255.255.255.0
+    no shutdown
+    exit
+  ip default-gateway 192.168.3.1
+  interface range f0/2-4, f0/7-24, g0/1-2
+    switchport mode access
+    switchport access vlan 7
+    shutdown
+    exit
+  interface fa0/6
+    switchport mode access
+    switchport access vlan 4 
+    exit
+ interface f0/1
+    switchport mode trunk
+    switchport trunk native vlan 8
+    switchport trunk allowed vlan 3,4,7,8
+    exit
+  interface f0/5
+    switchport mode trunk
+    switchport trunk native vlan 8
+    switchport trunk allowed vlan 3,4,7,8
+    exit
+ 
+  
