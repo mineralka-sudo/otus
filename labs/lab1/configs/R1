@@ -1,27 +1,33 @@
 conf t
-
-hostname R1
-
-no ip domain lookup
-
-enable password class
-enable secret password 
-
-line console 0
-password cisco
-login
-exit
-
-line vty 0 4
-login
-password cisco
-exit
-
-service password-encryption
-exit
-
-banner motd «This is a secure system. Authorized Access Only!»
-
-copy running-config startup-config
-
+  hostname R1
+  no ip domain lookup
+  enable password class
+  line console 0
+    password cisco
+    login
+    exit
+  line vty 0 15
+    login
+    password cisco
+    exit
+  service password-encryption
+  banner motd «This is a secure system. Authorized Access Only!»
+  exit
 clock set 19:03:00 13 feb 2022
+copy running-config startup-config
+conf t
+  interface g0/1
+    no shutdown
+    exit
+  interface g0/1.3
+    encapsulation dot1Q 3
+    ip address 192.168.3.1 255.255.255.0
+    exit
+  interface g0/1.4
+    encapsulation dot1Q 4
+    ip address 192.168.4.1 255.255.255.0
+    exit
+  interface g0/1.8
+    encapsulation dot1Q 8
+    exit
+    
