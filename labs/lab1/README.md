@@ -1,7 +1,7 @@
 # Router-on-a-Stick
 
 ### Topology
-![]https://raw.githubusercontent.com/mineralka-sudo/otus/main/labs/lab1/topology.png
+![](https://raw.githubusercontent.com/mineralka-sudo/otus/main/labs/lab1/topology.png)### Features
 
 ### Objectives:
 1: Build the Network and Configure Basic Device Settings  
