@@ -1,16 +1,16 @@
 # Router-on-a-Stick
 
-### Topology
+### Задачи:
+1: Создать сеть и настроить основные параметры устройств  
+2: Создать VLAN и назначить порты коммутаторов  
+3: Настройте trunk 802.1Q между коммутаторами  
+4: Настроить маршрутизацию между VLAN на маршрутизаторе  
+5: Убедиться, что маршрутизация между VLAN работает 
+
+### Топология
 ![](https://raw.githubusercontent.com/mineralka-sudo/otus/main/labs/lab1/topology.png)
 
-### Objectives:
-1: Build the Network and Configure Basic Device Settings  
-2: Create VLANs and Assign Switch Ports  
-3: Configure an 802.1Q Trunk between the Switches  
-4: Configure Inter-VLAN Routing on the Router  
-5: Verify Inter-VLAN Routing is working  
-
-### Addressing Table
+### Таблица адрессации
 | Device | Interface | IP Address   | Subnet Mask   | Default Gateway |
 |--------|-----------|--------------|---------------|-----------------|
 | R1     | G0/0/1.3  | 192.168.3.1  | 255.255.255.0 | N/A             |
@@ -21,7 +21,7 @@
 | PC-A   | NIC       | 192.168.3.3  | 255.255.255.0 | 192.168.3.1     |
 | PC-B   | NIC       | 192.168.4.3  | 255.255.255.0 | 192.168.4.1     |
 
-### VLAN Table
+### VLAN 
 | VLAN | Name       | Interface Assigned            |
 |------|------------|-------------------------------|
 | 3    | Management | S1: VLAN 3                    |
@@ -31,3 +31,18 @@
 | 7    | ParkingLot | S1: F0/24, F0/7-24, G0/1-2    |
 |      |            | S2: f0/2-17, f0/19-24, G0/1-2 |
 | 8    | Native     | N/A                           |
+
+### Решение:
+1: Создаем сеть и настраиваем основные параметры устройств
+    - Назначаем имя устройству 
+    - Отключаем поиск DNS
+```
+no ip domain lookup
+```
+    - Назначаем class в качестве привилегированного зашифрованного пароля EXEC
+    - Назначаем cisco в качестве пароля консоли 
+    - Назначаем cisco в качестве пароля VTY
+    - Шифруем открытые пароли
+    - Создаем баннер, предупреждающий любого, кто получает доступ к устройству, о том, что несанкционированный доступ запрещен
+    - Настраиваем часы
+    - Сохраняем текущую конфигурацию в файл начальной конфигурации
