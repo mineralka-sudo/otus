@@ -1,6 +1,7 @@
 # Router-on-a-Stick
 
 ### Topology
+![]topology.png
 
 ### Objectives:
 1: Build the Network and Configure Basic Device Settings  
