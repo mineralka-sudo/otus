@@ -40,3 +40,12 @@ no shutdown
 exit
 !
 show spanning-tree
+!
+conf t
+!
+interface range e0/0, e0/2
+no shutdown
+!
+exit
+!
+show spanning-tree
