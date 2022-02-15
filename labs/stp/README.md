@@ -59,7 +59,7 @@ show spanning-tree
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S2_2.PNG?raw=true)
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S3_2.PNG?raw=true)
 - S2 является корневым мостом, так как его MAC наименьший 
-- Порт S3 e0/3 является альтернативным, так как MAC S3 > MAC S1 
+- Порт S3 e0/3 Altn, так как MAC S3 > MAC S1 
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/t.png?raw=true)   
 #### 3. Наблюдаем за процессом выбора протоколом STP порта, исходя из стоимости портов
 ```
@@ -71,7 +71,7 @@ show spanning-tree
 ```
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S1_3.PNG?raw=true)
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S3_3.PNG?raw=true)   
-Так теперь cost S3 e0/3 < S1 e0/3, то S3 e0/3 становится des, а S1 e0/3 alt. 
+Так теперь cost S3 e0/3 < S1 e0/3, то S3 e0/3 становится Desg, а S1 e0/3 Altn. 
 #### 4. Наблюдаем за процессом выбора протоколом STP порта, исходя из приоритета портов
 ```
 interface range e0/0, e0/2
@@ -83,7 +83,7 @@ show spanning-tree
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S1_4.PNG?raw=true)
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S2_4.PNG?raw=true)
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S3_4.PNG?raw=true)   
-На S3 e0/0 root, так как со стороны S2 номер порта e0/2 < e0/3. Аналогично на S1 e0/0 root, так как S2 e0/0 < e0/1.
+На S3 e0/0 Root, так как со стороны S2 номер порта e0/2 < e0/3. Аналогично на S1 e0/0 Root, так как S2 e0/0 < e0/1.   
 Почему между S1 и S3 все порты des?
 
 - Какое значение протокол STP использует первым после выбора корневого моста, чтобы определить выбор порта?
