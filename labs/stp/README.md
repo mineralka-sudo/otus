@@ -80,9 +80,9 @@ no shutdown
 ```
 show spanning-tree
 ```
-![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S1_4.PNG?raw=true)
+![]()
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S2_4.PNG?raw=true)
-![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S3_4.PNG?raw=true)   
+![]()   
 На S3 e0/0 Root, так как со стороны S2 номер порта e0/2 < e0/3. Аналогично на S1 e0/0 Root, так как S2 e0/0 < e0/1.   
 
 - Какое значение протокол STP использует первым после выбора корневого моста, чтобы определить выбор порта?    
