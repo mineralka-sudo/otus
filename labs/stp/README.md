@@ -77,6 +77,9 @@ show spanning-tree
 interface range e0/0, e0/2
 no shutdown
 ```
+```
+show spanning-tree
+```
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S1_4.PNG?raw=true)
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S2_4.PNG?raw=true)
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S3_4.PNG?raw=true)
