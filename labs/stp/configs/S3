@@ -34,6 +34,9 @@ interface range e0/0-3
 switchport trunk encapsulation dot1q
 switchport mode trunk
 !
+interface range e0/1, e0/3
+no shutdown
+!
 exit
 !
 show spanning-tree
