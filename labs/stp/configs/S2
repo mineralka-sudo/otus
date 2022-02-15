@@ -1,0 +1,42 @@
+conf t
+!
+hostname S1
+!
+no ip domain-lookup
+!
+enable secret class
+!
+line vty 0 15
+password cisco
+login
+!
+line console 0
+password cisco
+login
+!
+logging synchronous
+!
+banner motd «This is a secure system. Authorized Access Only!»
+!
+interface vlan 1
+ip address 192.168.1.2 255.255.255.0
+!
+exit
+!
+copy running-config startup-config
+!
+conf t
+!
+interface range e0/0-3
+shutdown
+!
+interface range e0/0-3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+!
+interface range e0/1, e0/3
+no shutdown
+!
+exit
+!
+show spanning-tree
