@@ -71,7 +71,7 @@ show spanning-tree
 ```
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S1_3.PNG?raw=true)
 ![](https://github.com/mineralka-sudo/otus/blob/main/labs/stp/S3_3.PNG?raw=true)   
-Так теперь cost S3 e0/3 < S1 e0/3, то S3 e0/3 становится Desg, а S1 e0/3 Altn. 
+Так как теперь cost S3 e0/3 < S1 e0/3, то S3 e0/3 становится Desg, а S1 e0/3 Altn. 
 #### 4. Наблюдаем за процессом выбора протоколом STP порта, исходя из приоритета портов
 ```
 interface range e0/0, e0/2
